@@ -37,8 +37,15 @@ if ($result = mysqli_query($conn,$check_email)){
         exit();
     }
 }
-$insert = "INSERT INTO myguests (password,email) VALUES ('$entered_email', '$entered_pass');";
-if (mysqli_query($conn,$insert) === TRUE){
-    echo "Customer registered";
-    exit();
+$insert = "INSERT INTO MyGuests (email,password) VALUES ('$entered_email', '$entered_pass');";
+if (mysqli_query($conn,$insert)){
+    if ($result = mysqli_query($conn,"SELECT ID FROM MyGuests WHERE email = '$entered_email'")){
+        while ($row = $result->fetch_assoc()) {
+            $ID = $row['ID'];
+        }
+    }
+    echo "Customer registered. Customer ID = '$ID'";
+
+} else {
+    echo mysqli_error($conn);
 }
