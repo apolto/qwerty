@@ -1,22 +1,12 @@
 <?php
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 include ("connector.php");
 mysqli_select_db($conn, "lesson1");
 $email = "";
 $pass = "";
 $entered_pass = "";
 
-
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 if (!empty($_POST['email'])) $entered_email = $_POST['email'];
 
 if (!empty($_POST['password'])) $entered_pass = $_POST['password'];
@@ -26,7 +16,7 @@ if ($entered_pass !== $re_pass) {
     exit();
 }
 
-$check_email = "select email FROM myguests WHERE email = '$entered_email';";
+$check_email = "select email FROM MyGuests WHERE email = '$entered_email';";
 
 if ($result = mysqli_query($conn,$check_email)){
     while ($row = $result->fetch_assoc()) {

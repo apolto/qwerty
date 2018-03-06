@@ -1,14 +1,9 @@
 <?php session_start();
 
-/**define("INDEX", ""); // УСТАНОВКА КОНСТАНТЫ ГЛАВНОГО КОНТРОЛЛЕРА
-require_once($_SERVER[DOCUMENT_ROOT]."/cfg/core.php"); // ПОДКЛЮЧЕНИЕ ЯДРА
- * 
- */
-include ("connector.php");
-include ("home.php");
+require dirname(__FILE__)."/connector.php";
+require dirname(__FILE__)."/home.php";
 $database = 'lesson1';
 
-// ПОДКЛЮЧЕНИЕ К БД
 mysqli_query($conn,"CREATE DATABASE IF NOT EXISTS $database;");
 mysqli_select_db($conn, $database);
 //create table MyGuests
