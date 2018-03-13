@@ -1,17 +1,22 @@
 <?php session_start();
 
-require dirname(__FILE__)."/connector.php";
-require dirname(__FILE__)."/home.php";
-$database = 'lesson1';
+$localConfigFile = dirname(__FILE__)."/setup/local.xml";
+static $_isInstalled = false;
+static $db_host;
+static $db_name;
+static $db_user;
+static $db_pass;
 
-mysqli_query($conn,"CREATE DATABASE IF NOT EXISTS $database;");
-mysqli_select_db($conn, $database);
-//create table MyGuests
-$sql = "CREATE TABLE MyGuests (
-id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-password VARCHAR(30) NOT NULL,
-email VARCHAR(50) NOT NULL UNIQUE
-)";
-if (mysqli_query($conn,$sql) === TRUE){
-    echo "Table MyGuests was created successfully";
+if (is_readable($localConfigFile)) {
+    $_isInstalled = true;
+    $xml = simplexml_load_file($localConfigFile);
+    $db_host = $xml->db_host;
+    $db_name = $xml->db_name;
+    $db_user = $xml->db_user;
+    $db_pass = $xml->db_pass;
+}
+if (!$_isInstalled) {
+    include dirname(__FILE__)."/setup/install.html";
+} else {
+    include dirname(__FILE__)."/home.php";
 }
