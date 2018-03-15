@@ -1,8 +1,6 @@
 <?php
 
-
 include ("connector.php");
-mysqli_select_db($conn, "lesson1");
 $email = "";
 $pass = "";
 $entered_pass = "";

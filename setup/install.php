@@ -5,11 +5,14 @@
  * Date: 3/13/18
  * Time: 5:05 PM
  */
-
 if (!empty($_POST['db_name'])) $entered_db = $_POST['db_name'];
 if (!empty($_POST['db_host'])) $entered_host = $_POST['db_host'];
 if (!empty($_POST['db_user'])) $entered_user = $_POST['db_user'];
-$entered_pass = $_POST['db_password'];
+if (!empty($_POST['db_password'])) {
+    $entered_pass = $_POST['db_password'];
+}else {
+    $entered_pass = NULL;
+}
 
 require dirname(__FILE__)."/../connector.php";
 //create DB
@@ -35,9 +38,10 @@ $db = $root->appendChild(
     $xmlDoc->createElement("db_name", $entered_db));
 $db = $root->appendChild(
     $xmlDoc->createElement("db_user", $entered_user));
-$db = $root->appendChild(
+if ($entered_pass){
+    $db = $root->appendChild(
     $xmlDoc->createElement("db_pass", $entered_pass));
-
+}
 //make the output pretty
 $xmlDoc->formatOutput = true;
 

@@ -1,11 +1,7 @@
 <?php session_start();
 
 $localConfigFile = dirname(__FILE__)."/setup/local.xml";
-static $_isInstalled = false;
-static $db_host;
-static $db_name;
-static $db_user;
-static $db_pass;
+$_isInstalled = false;
 
 if (is_readable($localConfigFile)) {
     $_isInstalled = true;
@@ -13,8 +9,13 @@ if (is_readable($localConfigFile)) {
     $db_host = $xml->db_host;
     $db_name = $xml->db_name;
     $db_user = $xml->db_user;
-    $db_pass = $xml->db_pass;
+    if ($xml->db_pass) {
+        $db_pass = $xml->db_pass;
+    } else {
+        $db_pass = NULL;
+    }
 }
+
 if (!$_isInstalled) {
     include dirname(__FILE__)."/setup/install.html";
 } else {

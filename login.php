@@ -1,6 +1,5 @@
 <?php
 include ("connector.php");
-mysqli_select_db($conn, "lesson1");
 $email = "";
 
 if (!empty($_POST['email'])) $entered_email = $_POST['email'];
