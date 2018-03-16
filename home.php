@@ -5,7 +5,7 @@
 <body>
 <div align="center">
     <a href="login.php">LOGIN</a>
-    <a href="register.php">REGISTER</a>
+    <a href="registration.php">REGISTER</a>
 </div>
 </body>
 </html>

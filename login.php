@@ -21,7 +21,6 @@ if (isset($_REQUEST['Login'])) {
 
     include("connector.php");
     mysqli_select_db($conn, $db_name);
-    //@todo "Select database does not work"
 
     $email = "";
 
@@ -36,8 +35,7 @@ if (isset($_REQUEST['Login'])) {
             $email = $row['email'];
         }
         if ($email !== $entered_email) {
-            echo "user with such email does not exists";
-            exit();
+            echo "invalid user email";
         }
     }
 
@@ -55,5 +53,7 @@ if (isset($_REQUEST['Login'])) {
     }
 }
 ?>
+<br />
+<a href="/../index.php">Home Page</a>
 </body>
 </html>

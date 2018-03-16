@@ -24,6 +24,7 @@
 if (isset($_REQUEST['Register'])) {
 
     include("connector.php");
+    mysqli_select_db($conn, $db_name);
     $email = "";
     $pass = "";
     $entered_pass = "";
@@ -62,5 +63,7 @@ if (isset($_REQUEST['Register'])) {
     }
 }
 ?>
+<br />
+<a href="/../index.php">Home Page</a>
 </body>
 </html>

@@ -35,22 +35,7 @@ if (isset($_REQUEST['Install'])) {
         $entered_pass = NULL;
     }
 
-    require dirname(__FILE__) . "/../connector.php";
-//create DB
-    mysqli_query($conn, "CREATE DATABASE IF NOT EXISTS $entered_db;");
-    mysqli_select_db($conn, $entered_db);
-    $table = "Users";
-//create table MyGuests
-    $sql = "CREATE TABLE $table (
-id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-password VARCHAR(30) NOT NULL,
-email VARCHAR(50) NOT NULL UNIQUE
-)";
-    if (mysqli_query($conn, $sql) === TRUE) {
-        echo "Table $table was created successfully";
-    }
-
-// generate local.xml
+    // generate local.xml
     $xmlDoc = new DOMDocument();
     $root = $xmlDoc->appendChild(
         $xmlDoc->createElement("config"));
@@ -65,17 +50,32 @@ email VARCHAR(50) NOT NULL UNIQUE
             $xmlDoc->createElement("db_pass", $entered_pass));
     }
 //make the output pretty
-$xmlDoc->formatOutput = true;
+    $xmlDoc->formatOutput = true;
 
     echo $xmlDoc->save("local.xml");
 
     if (file_exists("local.xml")) {
-        echo "Installation finished. Configuration was saved to local.xml";
+        echo "|Configuration was saved to local.xml |";
 
+    }
+
+//create DB
+    require __DIR__ . "/../connector.php";
+
+    mysqli_query($conn, "CREATE DATABASE IF NOT EXISTS $db_name;");
+    mysqli_select_db($conn, $db_name);
+
+//create table MyGuests
+
+$sql = "CREATE TABLE Users (id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+password VARCHAR(30) NOT NULL,
+email VARCHAR(50) NOT NULL UNIQUE)";
+    if (mysqli_query($conn, $sql) === TRUE) {
+        echo "|Table 'Users' was created successfully|";
     }
 }
 ?>
-<br>
+<br />
 <a href="/../index.php">Home Page</a>
 </body>
 </html>
