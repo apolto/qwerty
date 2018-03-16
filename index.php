@@ -17,7 +17,10 @@ if (is_readable($localConfigFile)) {
 }
 
 if (!$_isInstalled) {
-    include dirname(__FILE__)."/setup/install.html";
+    ?>
+<h2>Please click <a href="/setup/install.php">INSTALL</a> to setup environment</h2>
+<?php
+
 } else {
     include dirname(__FILE__)."/home.php";
 }
