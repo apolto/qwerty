@@ -46,7 +46,7 @@ if (isset($_REQUEST['Login'])) {
             $pass = $row['password'];
         }
         if ($pass == $entered_pass) {
-            echo "Good password";
+            header("Location: myAccount.php");
         } else {
             echo "Wrong password";
         }
