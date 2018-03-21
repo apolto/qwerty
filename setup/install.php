@@ -65,7 +65,7 @@ if (isset($_REQUEST['Install'])) {
     mysqli_query($conn, "CREATE DATABASE IF NOT EXISTS $db_name;");
     mysqli_select_db($conn, $db_name);
 
-//create table MyGuests
+//create table Users
 
 $sql = "CREATE TABLE Users (id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 password VARCHAR(30) NOT NULL,
@@ -73,6 +73,15 @@ email VARCHAR(50) NOT NULL UNIQUE)";
     if (mysqli_query($conn, $sql) === TRUE) {
         echo "|Table 'Users' was created successfully|";
     }
+    //create table expenses
+    $sql2 = "CREATE TABLE expenses (id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+goods INT(30) NOT NULL,
+costs INT(50) NOT NULL),
+total_row INT(50),
+total_summ INT(50)";
+}
+    if (mysqli_query($conn, $sql2) === TRUE) {
+        echo "|Table 'expenses' was created successfully|";
 }
 ?>
 <br />
