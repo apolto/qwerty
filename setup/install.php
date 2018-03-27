@@ -75,10 +75,12 @@ email VARCHAR(50) NOT NULL UNIQUE)";
     }
     //create table expenses
     $sql2 = "CREATE TABLE expenses (id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-goods INT(30) NOT NULL,
-costs INT(50) NOT NULL),
+goods INT(30),
+meal INT(50),
 total_row INT(50),
 total_summ INT(50)";
+
+
 }
     if (mysqli_query($conn, $sql2) === TRUE) {
         echo "|Table 'expenses' was created successfully|";

@@ -39,13 +39,16 @@ if (isset($_REQUEST['Login'])) {
         }
     }
 
-    $check_pass = "select password FROM Users WHERE email = '$email'";
+    $check_pass = "select id,password FROM Users WHERE email = '$email';";
 
     if ($result = mysqli_query($conn, $check_pass)) {
         while ($row = $result->fetch_assoc()) {
             $pass = $row['password'];
+            $id = $row['id'];
         }
         if ($pass == $entered_pass) {
+            session_start();
+            $_SESSION['user_id'] = $id;
             header("Location: myAccount.php");
         } else {
             echo "Wrong password";
