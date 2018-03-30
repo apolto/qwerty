@@ -73,7 +73,7 @@ if (isset($_REQUEST['Install'])) {
   `email` varchar(50) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;";
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;";
     if (mysqli_query($conn, $sql) === TRUE) {
         echo "|Table 'Users' was created successfully|";
     }
@@ -85,7 +85,7 @@ if (isset($_REQUEST['Install'])) {
   `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `goods_type_id` (`goods_type_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=latin1;";
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;";
 
     $sql3 = "CREATE TABLE `goods` (
   `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
@@ -93,7 +93,7 @@ if (isset($_REQUEST['Install'])) {
   `goods_type` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `UNI` (`user_id`,`goods_type`)
-) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=latin1;";
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;";
 
 
     if (mysqli_query($conn, $sql2) === TRUE) {
