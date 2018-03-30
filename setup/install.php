@@ -67,24 +67,43 @@ if (isset($_REQUEST['Install'])) {
 
 //create table Users
 
-$sql = "CREATE TABLE Users (id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-password VARCHAR(30) NOT NULL,
-email VARCHAR(50) NOT NULL UNIQUE)";
+    $sql = "CREATE TABLE `Users` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `password` varchar(30) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;";
     if (mysqli_query($conn, $sql) === TRUE) {
         echo "|Table 'Users' was created successfully|";
     }
     //create table expenses
-    $sql2 = "CREATE TABLE expenses (id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-goods INT(30),
-meal INT(50),
-total_row INT(50),
-total_summ INT(50)";
+    $sql2 = "CREATE TABLE `expenses` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `goods_type_id` int(20) DEFAULT NULL,
+  `costs` int(30) DEFAULT NULL,
+  `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `goods_type_id` (`goods_type_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=latin1;";
+
+    $sql3 = "CREATE TABLE `goods` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` varchar(20) DEFAULT NULL,
+  `goods_type` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `UNI` (`user_id`,`goods_type`)
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=latin1;";
 
 
-}
     if (mysqli_query($conn, $sql2) === TRUE) {
         echo "|Table 'expenses' was created successfully|";
+    }
+    if (mysqli_query($conn, $sql3) === TRUE) {
+        echo "|Table 'goods' was created successfully|";
+    }
 }
+
 ?>
 <br />
 <a href="/../index.php">Home Page</a>

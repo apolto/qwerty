@@ -12,7 +12,7 @@ foreach($_POST as $key=>$value) {
                 if (mysqli_query($conn, "INSERT IGNORE INTO goods (user_id,goods_type) VALUES ($user_id,'$product_name');")) {
                 }
             }
-            echo "Product data saved successfully";
+            echo "Product data saved successfully ";
             break;
         case 'all_spent':
             $array_key = 0;
@@ -23,10 +23,11 @@ foreach($_POST as $key=>$value) {
                   ON DUPLICATE KEY UPDATE costs = $all_spent;")) {
                 }
             }
-            echo "Expenses data saved successfully";
+            echo " Expenses data saved successfully";
             break;
     }
 }
+session_write_close();
 ?>
 <br />
 <a href="login.php">Back to Login page</a>

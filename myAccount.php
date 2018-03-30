@@ -70,25 +70,27 @@ $result = mysqli_query($conn, "SELECT goods_type,costs FROM goods as t1 JOIN exp
                     <th>%</th>
                 </tr>
                 <?php
-                while ($row = $result->fetch_assoc()) {
-                    $types = $row['goods_type'];
-                    $costs = $row['costs'];
-                    ?>
-                    <tr>
-                        <td>
-                            <input type="text" name="product_name[]" style="width:100%" value="<?= $types ?>"/>
-                        </td>
-                        <td>
-                            <input type="int" id="price" style="width:100%"/>
-                        </td>
-                        <td>
-                            <input type="int" name="all_spent[]" style="width:100%" value="<?= $costs ?>" readonly/>
-                        </td>
-                        <td>
-                            <input type="int" style="width:100%" readonly/>
-                        </td>
-                    </tr>
-                    <?php
+                if ($result) {
+                    while ($row = $result->fetch_assoc()) {
+                        $types = $row['goods_type'];
+                        $costs = $row['costs'];
+                        ?>
+                        <tr>
+                            <td>
+                                <input type="text" name="product_name[]" style="width:100%" value="<?= $types ?>"/>
+                            </td>
+                            <td>
+                                <input type="int" id="price" style="width:100%"/>
+                            </td>
+                            <td>
+                                <input type="int" name="all_spent[]" style="width:100%" value="<?= $costs ?>" readonly/>
+                            </td>
+                            <td>
+                                <input type="int" style="width:100%" readonly/>
+                            </td>
+                        </tr>
+                        <?php
+                    }
                 }
                 ?>
 
