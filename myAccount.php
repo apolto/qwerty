@@ -3,7 +3,7 @@ session_start();
 $user_id = $_SESSION['user_id'];
 $percentage = 0;
 include("connector.php");
-mysqli_select_db($conn, 'ddd');
+mysqli_select_db($conn,$db_name);
 $result = mysqli_query($conn, "SELECT goods_type,costs FROM goods as t1 JOIN expenses as t2 ON t1.id = t2.goods_type_id AND t1.user_id ='$user_id';");
 
 ?>

@@ -1,4 +1,4 @@
-<?php session_start();
+<?php
 
 $_isInstalled = false;
 require_once ("connector.php");
