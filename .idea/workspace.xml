@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dac9aeeb-43cc-4fc1-9fa1-94c325c312c0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/report.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myAccount.php" afterPath="$PROJECT_DIR$/myAccount.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/setup/local.xml" afterPath="$PROJECT_DIR$/setup/local.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/report.php" afterPath="$PROJECT_DIR$/report.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -100,12 +98,12 @@
       <file leaf-file-name="report.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/report.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="19" lean-forward="true" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+            <state relative-caret-position="389">
+              <caret line="27" column="5" lean-forward="true" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
               <folding>
-                <marker date="1522357115000" expanded="true" signature="692:865" ph="INSERT INTO expenses... " />
-                <marker date="1522357115000" expanded="true" signature="755:828" ph="SELECT id FR... goods" />
-                <marker date="1522357115000" expanded="true" signature="866:881" ph="UPDATE costs... " />
+                <marker date="1522397807000" expanded="true" signature="711:884" ph="INSERT INTO expenses... " />
+                <marker date="1522397807000" expanded="true" signature="774:847" ph="SELECT id FR... goods" />
+                <marker date="1522397807000" expanded="true" signature="885:900" ph="UPDATE costs... " />
               </folding>
             </state>
           </provider>
@@ -228,7 +226,7 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP 5.6" />
   <component name="PhpXdebugProxy" host="127.0.0.1:8080" />
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1680" />
     <option name="height" value="951" />
@@ -325,7 +323,7 @@
       <updated>1520194352507</updated>
       <workItem from="1520194354879" duration="7708000" />
       <workItem from="1520953286010" duration="10955000" />
-      <workItem from="1521192035778" duration="74108000" />
+      <workItem from="1521192035778" duration="74364000" />
     </task>
     <task id="LOCAL-00001" summary="merged html and php files">
       <created>1521198960421</created>
@@ -345,10 +343,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="92771000" />
+    <option name="totallyTimeSpent" value="93027000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1680" height="951" extended-state="6" />
+    <frame x="0" y="23" width="1680" height="951" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20833333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -707,12 +705,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/report.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="19" lean-forward="true" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+        <state relative-caret-position="389">
+          <caret line="27" column="5" lean-forward="true" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
           <folding>
-            <marker date="1522357115000" expanded="true" signature="692:865" ph="INSERT INTO expenses... " />
-            <marker date="1522357115000" expanded="true" signature="755:828" ph="SELECT id FR... goods" />
-            <marker date="1522357115000" expanded="true" signature="866:881" ph="UPDATE costs... " />
+            <marker date="1522397807000" expanded="true" signature="711:884" ph="INSERT INTO expenses... " />
+            <marker date="1522397807000" expanded="true" signature="774:847" ph="SELECT id FR... goods" />
+            <marker date="1522397807000" expanded="true" signature="885:900" ph="UPDATE costs... " />
           </folding>
         </state>
       </provider>

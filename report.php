@@ -13,6 +13,7 @@ foreach($_POST as $key=>$value) {
                 }
             }
             echo "Product data saved successfully";
+            break;
         case 'all_spent':
             $array_key = 0;
             foreach($value as $all_spent) {
@@ -23,6 +24,7 @@ foreach($_POST as $key=>$value) {
                 }
             }
             echo "Expenses data saved successfully";
+            break;
     }
 }
 ?>
