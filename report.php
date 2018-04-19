@@ -27,7 +27,9 @@ foreach($_POST as $key=>$value) {
             break;
     }
 }
-session_write_close();
+unset($_SESSION['user_id']);
+session_destroy();
+
 ?>
 <br />
 <a href="login.php">Back to Login page</a>

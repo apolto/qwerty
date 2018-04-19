@@ -1,5 +1,8 @@
 <?php
 session_start();
+if(!isset($_SESSION['user_id'])){ //if login in session is not set
+    header("Location: login.php");
+}
 $user_id = $_SESSION['user_id'];
 $percentage = 0;
 include("connector.php");
@@ -66,7 +69,7 @@ $result = mysqli_query($conn, "SELECT goods_type,costs FROM goods as t1 JOIN exp
                 <tr>
                     <th>Type</th>
                     <th>Expenses</th>
-                    <th>Summ</th>
+                    <th>Total Spends</th>
                     <th>%</th>
                 </tr>
                 <?php
@@ -96,14 +99,16 @@ $result = mysqli_query($conn, "SELECT goods_type,costs FROM goods as t1 JOIN exp
 
             </tbody>
         </table>
-        <input type="button" id="calculate" value="Calculate"/>
         <br />
-        <input type="number" id="total" style="width:15%; margin-left: 1200px;"/> Total Spent
+        <input type="button" value="ADD ROW" id="btnAdd" onclick="AddRow()" style="width:15%";/>
+        <br />
+        <input type="button" id="calculate" value="Calculate" style="width:10%;";/>
+        <br />
+        <input type="number" id="total" readonly style="width:15%; margin-left: 1200px;"/> Total Spent
         <br />
     </form>
-    <input type="submit" form="pr" />
-    <input type="button" value="ADD ROW" id="btnAdd" onclick="AddRow()"/>
+    <input type="submit" form="pr"/>
 </body>
 <br />
-<a href="login.php">Back to Login page</a>
+<a href="logout.php">Logout</a>
 </html>
