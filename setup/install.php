@@ -25,15 +25,11 @@
 
 if (isset($_REQUEST['Install'])) {
 
-
-    if (!empty($_POST['db_name'])) $entered_db = $_POST['db_name'];
-    if (!empty($_POST['db_host'])) $entered_host = $_POST['db_host'];
-    if (!empty($_POST['db_user'])) $entered_user = $_POST['db_user'];
-    if (!empty($_POST['db_password'])) {
-        $entered_pass = $_POST['db_password'];
-    } else {
-        $entered_pass = NULL;
-    }
+    
+    $entered_db = $_POST['db_name'];
+    $entered_host = $_POST['db_host'];
+    $entered_user = $_POST['db_user'];
+    $entered_pass = $_POST['db_password'];
 
     // generate local.xml
     $xmlDoc = new DOMDocument();
@@ -53,7 +49,7 @@ if (isset($_REQUEST['Install'])) {
     $xmlDoc->formatOutput = true;
 
     echo $xmlDoc->save("local.xml");
-
+// TODO : re-work xml generation. crate xml after success connect to DB
     if (file_exists("local.xml")) {
         echo "|Configuration was saved to local.xml |";
 
